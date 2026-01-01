@@ -46,6 +46,5 @@ public class Main {
        int x = 0, y = 0;
        NameEnter(names);
        EnterNumbers(x,y,d);
-       Actions(x,y,d);
     }
 }
