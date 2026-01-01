@@ -24,21 +24,37 @@ public class Main {
         d = scan.next();
         switch (d){
             case "+":
-                System.out.println(x + y);
+                Summ(x,y);
                 break;
             case "-":
-                System.out.println(x - y);
+                Razn(x,y);
                 break;
             case "*":
-                System.out.println(x * y);
+                Umn(x,y);
                 break;
             case "/":
-                System.out.println(x / y);
+                Chast(x,y);
                 break;
             default:
                 System.out.println("Неверная команда");
                 break;
         }
+    };
+    public  static  void Summ(int x, int y){
+        int res = x + y;
+        System.out.println("Сумма : " + res);
+    };
+    public  static  void Razn(int x, int y){
+        int res = x - y;
+        System.out.println("Разность : " + res);
+    };
+    public  static  void Umn(int x, int y){
+        int res = x * y;
+        System.out.println("Произведение : " + res);
+    };
+    public  static  void Chast(int x, int y){
+        int res = x / y;
+        System.out.println("Частное : " + res);
     };
     public static void main(String[] args){
        String names = "";
