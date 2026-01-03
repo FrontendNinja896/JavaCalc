@@ -1,5 +1,6 @@
 package com.company;
 import java.lang.classfile.instruction.SwitchCase;
+import java.sql.Array;
 import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -10,57 +11,69 @@ public class Main {
         name = scan.next();
         System.out.println("Привет" + name);
     };
-    public static void EnterNumbers(int x, int y, String d){
+    public static void EnterNumbers(int[] arr, String d){
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите x:");
-        x = scan.nextInt();
-        System.out.println("Введите y:");
-        y = scan.nextInt();
-        Actions(x,y,d);
+        for(int i = 0; i < arr.length;i++){
+            arr[i] = scan.nextInt();
+        }
+        Actions(arr,d);
     };
-    public  static void Actions(int x, int y, String d){
+    public  static void Actions(int[] arr, String d){
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите действие");
         d = scan.next();
         switch (d){
             case "+":
-                Summ(x,y);
+                Summ(arr);
                 break;
             case "-":
-                Razn(x,y);
+                Razn(arr);
                 break;
             case "*":
-                Umn(x,y);
+                Umn(arr);
                 break;
             case "/":
-                Chast(x,y);
+                Chast(arr);
                 break;
             default:
                 System.out.println("Неверная команда");
                 break;
         }
     };
-    public  static  void Summ(int x, int y){
-        int res = x + y;
-        System.out.println("Сумма : " + res);
+    public  static  void Summ(int[] arr){
+        int res = 0;
+        for(int i = 0; i < arr.length;i++){
+            res = arr[i] + arr[i];
+        }
+        System.out.println(res);
     };
-    public  static  void Razn(int x, int y){
-        int res = x - y;
-        System.out.println("Разность : " + res);
+    public  static  void Razn(int[] arr){
+        int res = 0;
+        for(int i = 0; i < arr.length;i++){
+            res = arr[i] - i;
+        }
+        System.out.println(res);
     };
-    public  static  void Umn(int x, int y){
-        int res = x * y;
-        System.out.println("Произведение : " + res);
+    public  static  void Umn(int[] arr){
+        int res = 0;
+        for(int i = 0; i < arr.length;i++){
+            res = arr[i] * arr[i];
+        }
+        System.out.println(res);
     };
-    public  static  void Chast(int x, int y){
-        int res = x / y;
-        System.out.println("Частное : " + res);
+    public  static  void Chast(int[] arr){
+        int res = 0;
+        for(int i = 0; i < arr.length;i++){
+            res = arr[i] / i;
+        }
+        System.out.println(res);
     };
     public static void main(String[] args){
-       String names = "";
-       String d = "";
+       String names = "", d = "";
        int x = 0, y = 0;
+       int [] arr = new int[3];
        NameEnter(names);
-       EnterNumbers(x,y,d);
+       EnterNumbers(arr,d);
     }
 }
